@@ -1,0 +1,17 @@
+Caso não queira criar um novo Login: 
+
+usar o abaixo
+email : candidato@hbsis.com.br
+pass : Teste!23
+
+e rodar o script com as permissoes de acesso substituir o UserId(8952336a-5729-47ac-aa9c-ae9c50d3a8d8) pelo id gerado na tabela AspNetUser
+SET IDENTITY_INSERT [dbo].[AspNetUserClaims] ON
+INSERT INTO [dbo].[AspNetUserClaims] ([Id], [UserId], [ClaimType], [ClaimValue]) VALUES (1, N'8952336a-5729-47ac-aa9c-ae9c50d3a8d8', N'PermissoesCliente', N'CI,CX,CD,CL,CE')
+SET IDENTITY_INSERT [dbo].[AspNetUserClaims] OFF
+
+
+Para a base de dados foi usado o localDB na conection string 
+
+Para modificar a string de conexao no web config do service
+
+
