@@ -1,0 +1,54 @@
+﻿<form role="form" style="max-width: 500px;">
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h2>Excluir Cliente</h2></div>
+
+        <div class="form-horizontal">
+            <br />
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    Nome
+                </div>
+                <div class="col-md-4">
+                    <p class="form-control-static">  {{Nome}} </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    Codigo
+                </div>
+                <div class="col-md-4">
+                    <p class="form-control-static">  {{Codigo}} </p>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    CPF
+                </div>
+                <div class="col-md-4">
+                    <p class="form-control-static">  {{CPF}} </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    Telefone
+                </div>
+                <div class="col-md-4">
+                    <p class="form-control-static">  {{Telefone}} </p>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <a href="#/list" class="btn btn-info">Voltar</a>
+                    <button type="submit" class="btn btn-primary" ng-click="delete()">
+                        Delete
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+  </form>

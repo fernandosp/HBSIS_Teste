@@ -1,0 +1,51 @@
+﻿<div>
+    <a href="#/create" class="btn">Create</a>
+</div>      
+<div class="panel panel-primary table-responsive">
+        <div class="panel-heading">
+            <h2 class="panel-title">Clientes</h2>
+        </div>
+        <table class="table table-hover ">
+
+            <tr class="info">
+                <th>
+                   Codigo
+                </th>
+                <th>
+                    Nome
+                </th>
+                <th>
+                    CPF
+                </th>
+                <th>
+                    Telefone
+                </th>
+                <th>Ações</th>
+            </tr>
+
+            <tbody>
+                <tr ng-repeat="item in clientes">
+                    <td>
+                      {{item.Codigo}}
+                    </td>
+                    <td>
+                        {{item.Nome}}
+                    </td>
+                    <td>
+                        {{item.CPF}}
+                    </td>
+                    <td>
+                        {{item.Telefone}}
+                    </td>
+                    <td>
+                        <a href="#/edit/{{item.ClienteId}}" class="glyphicon glyphicon-edit"></a>
+                        <a href="#/details/{{item.ClienteId}}" class="glyphicon glyphicon-eye-open"></a>
+                        <a href="#/delete/{{item.ClienteId}}" class="glyphicon glyphicon-trash"></a>
+                    </td>
+                </tr>
+                }
+            </tbody>
+        </table>
+    </div>
+
+                        

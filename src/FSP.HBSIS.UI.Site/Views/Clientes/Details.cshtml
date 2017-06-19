@@ -1,0 +1,79 @@
+﻿@model FSP.HBSIS.Application.ViewModels.ClienteViewModel
+
+@{
+    ViewBag.Title = "Detalhes Cliente";
+}
+
+<div class="panel panel-primary">
+    <div class="panel-heading"><h2>Detalhes Cliente</h2></div>
+
+    <div class="form-horizontal">
+        <br />
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                @Html.LabelFor(model => model.Nome)
+            </div>
+            <div class="col-md-4">
+                @Html.TextBox("Nome", Model.Nome, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                @Html.LabelFor(model => model.Codigo)
+            </div>
+            <div class="col-md-4">
+                @Html.TextBox("Codigo", Model.Codigo, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                @Html.LabelFor(model => model.CPF)
+            </div>
+            <div class="col-md-4">
+                @Html.TextBox("CPF", Model.CPF, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+        <div class="form-group">
+            <div class="control-label col-md-2">
+                @Html.LabelFor(model => model.Telefone)
+            </div>
+            <div class="col-md-4">
+                @Html.TextBox("Telefone", Model.Telefone, new { @class = "form-control", @readonly = "readonly" })
+            </div>
+        </div>
+
+    </div>
+
+
+
+    @*<table class="table table-hove">
+        <thead>
+            <tr>
+                <th>@Html.DisplayNameFor(model => model.Nome)</th>
+                <th>@Html.DisplayNameFor(model => model.Codigo)</th>
+                <th>@Html.DisplayNameFor(model => model.CPF)</th>
+                <th>@Html.DisplayNameFor(model => model.Telefone)</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+
+                <td>@Html.DisplayFor(model => model.Nome)</td>
+                <td>@Html.DisplayFor(model => model.Codigo)</td>
+                <td>@Html.DisplayNameFor(model => model.CPF)</td>
+                <td>@Html.DisplayFor(model => model.Telefone)</td>
+            </tr>
+        </tbody>
+    </table>*@
+
+
+
+</div>
+<p>
+    @Html.ActionLink("Editar", "Edit", null, null, new { @class = "btn btn-primary" })
+    @Html.ActionLink("Voltar", "Index", null, null, new { @class = "btn btn-primary" })
+</p>

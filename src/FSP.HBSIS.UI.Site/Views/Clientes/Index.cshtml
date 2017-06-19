@@ -1,0 +1,68 @@
+﻿@using FSP.HBSIS.UI.Site.Helpers
+@model IEnumerable<FSP.HBSIS.Application.ViewModels.ClienteViewModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<div class="panel panel-primary table-responsive">
+    <div class="panel-heading">
+        <h2 class="panel-title">Clientes</h2>
+    </div>
+    <table class="table table-hover ">
+        
+            <tr class="info">
+                <th >
+                    @Html.DisplayNameFor(model => model.Codigo)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.Nome)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.CPF)
+                </th>
+                <th >
+                    @Html.DisplayNameFor(model => model.Telefone)
+                </th>
+                <th>Ações</th>
+            </tr>
+            
+<tbody>
+            @foreach (var item in Model)
+            {
+
+                <tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Codigo)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Nome)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.CPF)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Telefone)
+                    </td>
+                    <td>
+                        @Html.ActionLink(" ", "Edit", new { id = item.ClienteId }, new { @class = "btn glyphicon glyphicon-pencil" }) |
+                        @Html.ActionLink(" ", "Details", new { id = item.ClienteId }, new { @class = "glyphicon glyphicon-eye-open" }) |
+                        @Html.ActionLink(" ", "Delete", new { id = item.ClienteId }, new { @class = "glyphicon glyphicon-trash" }).IfClaimHelper("PermissoesCliente", "CX")
+                    </td>
+                </tr>
+
+            }
+        </tbody>
+    </table>
+</div>
+<p>
+    @{
+        if (this.IfClaim("PermissoesCliente", "CX"))
+        {
+        <p>
+            @*<a href="/hbsis/cadastros/novo-cliente" class="">Criar Novo</a>*@
+            @Html.ActionLink("Novo Cliente", "Create", null, null, new { @class = "btn btn-primary" })
+        </p>
+        }
+    }
+    </p>

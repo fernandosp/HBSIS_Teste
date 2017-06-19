@@ -1,0 +1,60 @@
+﻿@model FSP.HBSIS.Application.ViewModels.ClienteViewModel
+
+@{
+    ViewBag.Title = "Delete";
+}
+
+@using (Html.BeginForm())
+{
+
+    <div class="panel panel-primary">
+        <div class="panel-heading"><h2>Excluir Cliente</h2></div>
+        @Html.AntiForgeryToken()
+        <div class="form-horizontal">
+            <br />
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    @Html.LabelFor(model => model.Nome)
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBox("Nome", Model.Nome, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    @Html.LabelFor(model => model.Codigo)
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBox("Codigo", Model.Codigo, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    @Html.LabelFor(model => model.CPF)
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBox("CPF", Model.CPF, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="control-label col-md-2">
+                    @Html.LabelFor(model => model.Telefone)
+                </div>
+                <div class="col-md-4">
+                    @Html.TextBox("Telefone", Model.Telefone, new { @class = "form-control", @readonly = "readonly" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                <div class="col-md-offset-2 col-md-10">
+                    <input type="submit" value="Delete" class="btn btn-primary" />
+                    @Html.ActionLink("Voltar", "Index", null, null, new { @class = "btn btn-primary" })
+                </div>
+            </div>
+        </div>
+    </div>
+
+}
